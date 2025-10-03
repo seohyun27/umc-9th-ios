@@ -49,7 +49,7 @@ city={'서울특별시'}&district={'성북구'}&size={6}&last-mission-id={24534}
 ## 리뷰 작성
 
 ### API endpoint
-POST /users/{user-id}/reviews
+POST /users/reviews
 
 ### Request Body
 --{boundaryString}
@@ -85,7 +85,7 @@ rest-id={334}
 ## 미션 목록 조회
 
 ### API endpoint
-GET /users/{user-id}/missions
+GET /users/missions
 
 ### Request Body
 필요 없음
@@ -96,3 +96,25 @@ Accept: application/json
 
 ### Query String
 complete={true}&size={6}&last-mission-id={24534}
+
+# 미션 성공 누르기
+
+## 미션 성공 여부 변경
+
+### API endpoint
+PATCH /users/{user-id}/missions/{mission-id}
+
+### Request Body
+```json
+{
+	"complete" : "true"
+}
+```
+
+### Request Header
+Authorization : Bearer {accessToken}
+Accept: application/json
+
+### Query String
+필요 없음
+
