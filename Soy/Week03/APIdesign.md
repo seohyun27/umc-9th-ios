@@ -44,3 +44,40 @@ Accept: application/json
 ### Query String
 city={'서울특별시'}&district={'성북구'}&size={6}&last-mission-id={24534}
 
+# 마이 페이지 리뷰 작성
+
+## 리뷰 작성
+
+### API endpoint
+POST /users/{user-id}/reviews
+
+### Request Body
+--{boundaryString}
+Content-Disposition: form-data; name={"rating"}
+
+{5}
+--{boundaryString}
+Content-Disposition: form-data; name={"content"}
+
+{"정말 맛있어요"}
+--{boundaryString}
+Content-Disposition: form-data; name={"photos"}; filename={"2025100301.jpg"}
+Content-Type: image/jpeg
+
+{[JPG 파일의 이진 데이터(Binary Data)]}
+--{boundaryString}
+Content-Disposition: form-data; name={"photos"}; filename={"2025100307.jpg"}
+Content-Type: image/jpeg
+
+{[JPG 파일의 이진 데이터(Binary Data)]}
+--{boundaryString}--
+
+### Request Header
+Authorization : Bearer {accessToken}
+Accept: application/json
+Content-Type: multipart/form-data; boundary={boundaryString}
+
+### Query String
+rest-id={334}
+
+
