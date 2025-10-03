@@ -118,3 +118,45 @@ Accept: application/json
 ### Query String
 필요 없음
 
+# 회원 가입 하기
+
+## 회원 정보 전송
+
+### API endpoint
+POST /auth/users
+
+### Request Body
+```json
+{
+	"userId" : "seoyeoki",
+	"userName" : "김서연",
+	"sex" : "female",
+	"birth" : "20030724",
+	"address" : {
+		"province" : "경상북도",
+		"city" : "경산시",
+		"region" : "계양동"
+	},
+	"favorFood" : [
+		"한식",
+		"도시락"
+	],
+	"termAgree" : [
+		{
+			"termId" : 4,
+			"agreed" : true
+		},
+		{
+			"termId" : 6,
+			"agreed" : false
+		}
+	]
+}
+```
+
+### Request Header
+Accept: application/json
+
+### Query String
+필요 없음
+
