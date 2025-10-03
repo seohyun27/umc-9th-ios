@@ -14,3 +14,17 @@ Accept: application/json
 
 ### Query String
 필요 없음
+
+## 드롭다운으로 선택할 수 있는 지역 목록 조회
+
+### API endpoint
+GET /address-list
+
+### Request Body
+필요 없음
+
+### Request Header
+Accept: application/json
+
+### Query String
+city={'서울특별시'}&district={'성북구'}
