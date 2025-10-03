@@ -4,10 +4,10 @@
 
 | 기능                           | method | url                         | query-string                      | body                                    |
 | ------------------------------ | ------ | --------------------------- | --------------------------------- | --------------------------------------- |
-| 미션 조회 (미션 목록/ 홈 화면) | GET    | auth/users/missions         | region, end_date, end_id, enabled | -                                       |
+| 미션 조회 (미션 목록/ 홈 화면) | GET    | users/missions         | region, end_date, end_id, enabled | -                                       |
 | 리뷰 작성                      | POST   | stores/{store-id}/review    | -                                 | content, rate, images                   |
 | 미션 성공 누르기               | PUT    | users/missions/{mission-id} | -                                 | status, date                            |
-| 회원가입                       | POST   | users/sign-up               | -                                 | name, gender, birth-date, address, type |
+| 회원가입                       | POST   | auth/users/sign-up               | -                                 | name, gender, birth-date, address, type |
 
 ## 1. 홈 화면
 
