@@ -80,4 +80,19 @@ Content-Type: multipart/form-data; boundary={boundaryString}
 ### Query String
 rest-id={334}
 
+# 미션 목록 조회
 
+## 미션 목록 조회
+
+### API endpoint
+GET /users/{user-id}/missions
+
+### Request Body
+필요 없음
+
+### Request Header
+Authorization : Bearer {accessToken}
+Accept: application/json
+
+### Query String
+complete={true}&size={6}&last-mission-id={24534}
