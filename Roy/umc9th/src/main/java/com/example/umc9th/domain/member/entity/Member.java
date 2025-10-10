@@ -15,31 +15,34 @@ import java.time.LocalDateTime;
 @Getter
 @Table(name = "member")
 public class Member {
+
   @Id
   @Column(name = "member_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "name")
+  @Column(name = "name", length = 10, nullable = false)
   private String name;
 
-  @Column(name = "gender")
+  @Column(name = "gender", nullable = false)
   @Enumerated(EnumType.STRING)
-  private Gender gender;
+  @Builder.Default
+  private Gender gender = Gender.NONE;
 
-  @Column(name = "birth_date")
+  @Column(name = "birth_date", nullable = true)
   private LocalDate birth_date;
 
-  @Column(name = "address")
+  @Column(name = "address", nullable = false)
   private String address;
 
-  @Column(name = "member_type")
+  @Column(name = "member_type", nullable = false)
   @Enumerated(EnumType.STRING)
   private MemberType type;
 
-  @Column(name = "point")
-  private Long point;
+  @Column(name = "point", nullable = true)
+  @Builder.Default
+  private Long point = 0L;
 
-  @Column(name = "inactivate_at")
+  @Column(name = "inactivate_at", nullable = true)
   private LocalDateTime inactivate_at;
 }
