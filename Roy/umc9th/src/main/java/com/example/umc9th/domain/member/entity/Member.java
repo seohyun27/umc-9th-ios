@@ -2,11 +2,13 @@ package com.example.umc9th.domain.member.entity;
 
 import com.example.umc9th.domain.member.enums.Gender;
 import com.example.umc9th.domain.member.enums.MemberType;
+import com.example.umc9th.domain.mission.entity.Perform;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @Entity
 @Builder
@@ -45,4 +47,8 @@ public class Member {
 
   @Column(name = "inactivate_at", nullable = true)
   private LocalDateTime inactivate_at;
+
+  @OneToMany(fetch = FetchType.LAZY)
+  @JoinColumn(name = "perform_id")
+  private ArrayList<Perform> perform;
 }
