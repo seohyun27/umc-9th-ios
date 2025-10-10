@@ -1,5 +1,6 @@
 package com.example.umc9th.domain.mission.entity;
 
+import com.example.umc9th.domain.store.entity.Store;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -25,4 +26,8 @@ public class Mission {
 
   @Column(name = "standard_amount", nullable = false)
   private Long standard_amount = 0L;
+
+  @OneToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "store_id")
+  private Store store;
 }
