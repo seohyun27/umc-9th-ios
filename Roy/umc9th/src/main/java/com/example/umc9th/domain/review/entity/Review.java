@@ -22,6 +22,6 @@ public class Review {
   @Column(name = "review_content")
   private String content;
 
-  @OneToMany(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.LAZY)
   private Store store;
 }
