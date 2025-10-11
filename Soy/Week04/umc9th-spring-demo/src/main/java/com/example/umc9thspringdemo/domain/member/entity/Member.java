@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -58,5 +59,5 @@ public class Member extends BaseEntity {
     private LocalDate inactiveDate;
 
     @OneToMany(mappedBy = "member")
-    private List<SnsLogin> snsLogin;
+    private List<SnsLogin> snsLoginList = new ArrayList<>();
 }

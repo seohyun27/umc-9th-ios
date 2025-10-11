@@ -1,7 +1,14 @@
 package com.example.umc9thspringdemo.domain.review.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+@Entity
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
+@Table(name = "photo_review")
 public class ReviewPhoto {
 
     @Id
