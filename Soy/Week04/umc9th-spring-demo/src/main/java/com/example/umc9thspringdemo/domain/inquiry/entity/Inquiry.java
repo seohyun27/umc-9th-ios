@@ -24,7 +24,9 @@ public class Inquiry extends BaseEntity {
     private String title;
 
     @Column(name = "dtype")
-    private InquiryType inquiryType;
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private InquiryType inquiryType = InquiryType.OTHER;
 
     @Column(name = "content", nullable = false)
     private String content;

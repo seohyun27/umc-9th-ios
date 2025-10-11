@@ -2,7 +2,7 @@ package com.example.umc9thspringdemo.domain.member.entity;
 
 import com.example.umc9thspringdemo.domain.member.enums.Gender;
 
-import com.example.umc9thspringdemo.domain.point.PointHistory;
+import com.example.umc9thspringdemo.domain.point.entity.PointHistory;
 import com.example.umc9thspringdemo.global.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;

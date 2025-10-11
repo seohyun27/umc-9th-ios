@@ -1,4 +1,4 @@
-package com.example.umc9thspringdemo.domain.point;
+package com.example.umc9thspringdemo.domain.point.entity;
 
 
 import com.example.umc9thspringdemo.domain.member.entity.Member;
