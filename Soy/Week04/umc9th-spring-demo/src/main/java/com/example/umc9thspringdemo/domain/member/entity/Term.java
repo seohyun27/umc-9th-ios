@@ -18,13 +18,13 @@ public class Term extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     @Enumerated(EnumType.STRING)
     private TermName termName;
 
     @Column(name = "desc")
     private String desc;
 
-    @Column(name = "status")
+    @Column(name = "status", nullable = false)
     private boolean isValid;
 }

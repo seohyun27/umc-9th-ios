@@ -18,7 +18,7 @@ public class Food extends BaseEntity {
     @Column(name = "food_id")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     @Enumerated(EnumType.STRING)
     private FoodName name;
 }
