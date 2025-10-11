@@ -1,4 +1,5 @@
-package com.example.umc9thspringdemo.domain.mission.entity.mapping;
+package com.example.umc9thspringdemo.domain.point;
+
 
 import com.example.umc9thspringdemo.domain.member.entity.Member;
 import com.example.umc9thspringdemo.domain.mission.entity.Mission;
@@ -13,19 +14,25 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
-@Table(name = "member_mission")
-public class MemberMission  extends BaseEntity {
+@Table(name = "point_history")
+public class PointHistory extends BaseEntity {
 
     @Id
-    @Column(name = "member_mission_id")
+    @Column(name = "point_history_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "is_completed", nullable = false)
-    private boolean isCompleted;
+    @Column(name = "point", nullable = false)
+    private Long point;
 
-    @Column(name = "completed_date")
-    private LocalDateTime completedDate;
+    @Column(name = "desc")
+    private String description;
+
+    @Column(name = "status", nullable = false)
+    private boolean isValid;
+
+    @Column(name = "inactive_date")
+    private LocalDateTime inactiveDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")

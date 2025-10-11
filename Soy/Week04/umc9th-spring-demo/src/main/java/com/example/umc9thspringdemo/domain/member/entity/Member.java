@@ -2,6 +2,7 @@ package com.example.umc9thspringdemo.domain.member.entity;
 
 import com.example.umc9thspringdemo.domain.member.enums.Gender;
 
+import com.example.umc9thspringdemo.domain.point.PointHistory;
 import com.example.umc9thspringdemo.global.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -60,4 +61,7 @@ public class Member extends BaseEntity {
 
     @OneToMany(mappedBy = "member")
     private List<SnsLogin> snsLoginList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<PointHistory> pointHistoryList = new ArrayList<>();
 }
