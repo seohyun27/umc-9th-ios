@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
     /**
-     * 마이 페이지 화면 쿼리 가져오기 (포인트 합계 포함)
+     * 마이 페이지 화면 가져오기 (포인트 합계 포함)
 
      * Member에다가 MemberMission과 Mission을 join
      * 이때 Member는 MemberMission과 관련된 필드를 가지지 않으므로 MemberMission를 통째로 가져온 뒤 member_id를 통해 명시적(ON 구문 사용)으로 join한다
