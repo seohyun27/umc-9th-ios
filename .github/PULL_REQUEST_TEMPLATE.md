@@ -1,6 +1,5 @@
 ## 🔥 Related Issues
 - close #IssueNumber
-- (이전의 커밋에서 이어 작성한 코드의 경우)
 - (필요한 경우만 작성하고 없으면 지우기)
 
 ## 💻 작업 내용
