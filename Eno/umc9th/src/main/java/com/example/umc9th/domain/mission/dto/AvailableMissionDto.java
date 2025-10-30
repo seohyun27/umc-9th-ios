@@ -5,7 +5,7 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
-@AllArgsConstructor // JPQL이 이 생성자를 호출합니다.
+@AllArgsConstructor
 public class AvailableMissionDto {
     private char dtype;
     private String missionText;
