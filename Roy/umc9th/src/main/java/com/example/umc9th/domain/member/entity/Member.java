@@ -3,12 +3,14 @@ package com.example.umc9th.domain.member.entity;
 import com.example.umc9th.domain.member.enums.Gender;
 import com.example.umc9th.domain.member.enums.MemberType;
 import com.example.umc9th.domain.mission.entity.Perform;
+import com.example.umc9th.global.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Builder
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Table(name = "member")
-public class Member {
+public class Member extends BaseEntity {
 
   @Id
   @Column(name = "member_id", nullable = false)
@@ -48,7 +50,6 @@ public class Member {
   @Column(name = "inactivate_at", nullable = true)
   private LocalDateTime inactivate_at;
 
-  @OneToMany(fetch = FetchType.LAZY)
-  @JoinColumn(name = "perform_id")
-  private ArrayList<Perform> perform;
+  @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
+  private List<Perform> performs = new ArrayList<>();
 }
