@@ -27,6 +27,9 @@ public class Mission {
   @Column(name = "standard_amount", nullable = false)
   private Long standard_amount = 0L;
 
+  @Column(name = "end_date")
+  private LocalDateTime endDate;
+
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "store_id")
   private Store store;

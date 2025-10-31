@@ -10,6 +10,7 @@ import lombok.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Builder
@@ -49,7 +50,6 @@ public class Member extends BaseEntity {
   @Column(name = "inactivate_at", nullable = true)
   private LocalDateTime inactivate_at;
 
-  @OneToMany(fetch = FetchType.LAZY)
-  @JoinColumn(name = "perform_id")
-  private ArrayList<Perform> perform;
+  @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
+  private List<Perform> performs = new ArrayList<>();
 }
