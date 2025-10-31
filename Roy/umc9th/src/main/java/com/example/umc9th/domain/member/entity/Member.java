@@ -3,6 +3,7 @@ package com.example.umc9th.domain.member.entity;
 import com.example.umc9th.domain.member.enums.Gender;
 import com.example.umc9th.domain.member.enums.MemberType;
 import com.example.umc9th.domain.mission.entity.Perform;
+import com.example.umc9th.global.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Table(name = "member")
-public class Member {
+public class Member extends BaseEntity {
 
   @Id
   @Column(name = "member_id", nullable = false)
